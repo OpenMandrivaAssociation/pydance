@@ -44,14 +44,15 @@ bzcat %{SOURCE2} > README.mandrake
 #(peroyvind) remove announcer which uses non-free files
 %{__rm} -rf $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/themes/dj/mrt
 
-%{__install} -d $RPM_BUILD_ROOT%{_menudir}
-%{__cat} <<EOF >$RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		icon=%{name}.png \
-		needs="x11" \
-		section="More Applications/Games/Other" \
-		title="%{name}"\
-		longtitle="%{Summary}"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}		
+Icon=%{name}				
+Categories=Game;		
+Name=%{name}		
+Comment=%{Summary}
 EOF
 
 %{__install} -d $RPM_BUILD_ROOT{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
@@ -76,7 +77,7 @@ convert -size 48x48 icon.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 %doc README.mandrake docs/*.txt docs/*.html
 %{_gamesdatadir}/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}.cfg
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
