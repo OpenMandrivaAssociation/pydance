@@ -19,6 +19,7 @@ Provides:	pyddr
 Obsoletes:	pyddr
 BuildRequires:	python ImageMagick
 BuildRequires:  zip
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 pyDDR is fun dancing game for experience asian dance beat!
