@@ -1,6 +1,6 @@
 %define	name	pydance
 %define	version	1.0.3
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 %define	Summary	A Dance Dance Revolution simulator
 
 Name:		%{name}
@@ -52,7 +52,7 @@ Type=Application
 Exec=%{_gamesbindir}/%{name}		
 Icon=%{name}				
 Categories=Game;		
-Name=%{name}		
+Name=%{name}
 Comment=%{Summary}
 EOF
 
