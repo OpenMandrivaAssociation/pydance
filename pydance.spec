@@ -63,11 +63,15 @@ convert -size 48x48 icon.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 
 %{__install} -m644 desktop.pydance -D $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 											  
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
