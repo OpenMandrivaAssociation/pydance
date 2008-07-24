@@ -1,6 +1,6 @@
 %define	name	pydance
 %define	version	1.0.3
-%define	release	%mkrel 3
+%define	release	%mkrel 5
 %define	Summary	A Dance Dance Revolution simulator
 
 Name:		%{name}
