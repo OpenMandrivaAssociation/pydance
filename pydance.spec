@@ -17,7 +17,7 @@ BuildArch:	noarch
 Requires:	pygame
 Provides:	pyddr
 Obsoletes:	pyddr
-BuildRequires:	python ImageMagick
+BuildRequires:	python imagemagick
 BuildRequires:  zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
