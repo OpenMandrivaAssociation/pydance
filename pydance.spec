@@ -1,6 +1,6 @@
 %define	name	pydance
 %define	version	1.0.3
-%define	release	%mkrel 6
+%define	release	%mkrel 7
 %define	Summary	A Dance Dance Revolution simulator
 
 Name:		%{name}
@@ -10,7 +10,7 @@ License:	MIT
 Url:		http://icculus.org/pyddr/
 Source0:	%{name}-%{version}.tar.bz2
 Source2:	%{name}-README.mandrake.bz2
-#Patch0:	%{name}-0.8.1-no-djtheme.patch.bz2
+Patch0:		pydance-1.0.3-fix-desktop-file.patch
 Group:		Games/Other
 Summary:	%{Summary}
 BuildArch:	noarch
@@ -22,7 +22,7 @@ BuildRequires:  zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-pyDDR is fun dancing game for experience asian dance beat!
+pyDDR is a fun dancing game to experience asian dance beat!
 Showing friends your hot move with big score!
  
 Highly configurable, colorful animated arrow motion, limitless
@@ -32,7 +32,7 @@ transitions.
 
 %prep
 %setup -q
-#%patch0
+%patch0 -p1
 bzcat %{SOURCE2} > README.mandrake
 
 %build
@@ -44,17 +44,6 @@ bzcat %{SOURCE2} > README.mandrake
 
 #(peroyvind) remove announcer which uses non-free files
 %{__rm} -rf $RPM_BUILD_ROOT%{_gamesdatadir}/%{name}/themes/dj/mrt
-
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
-[Desktop Entry]
-Type=Application
-Exec=%{_gamesbindir}/%{name}		
-Icon=%{name}				
-Categories=Game;		
-Name=%{name}
-Comment=%{Summary}
-EOF
 
 %{__install} -d $RPM_BUILD_ROOT{%{_miconsdir},%{_iconsdir},%{_liconsdir}}
 convert -size 16x16 icon.png $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
@@ -82,7 +71,6 @@ convert -size 48x48 icon.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 %doc README.mandrake docs/*.txt docs/*.html
 %{_gamesdatadir}/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}.cfg
-%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
