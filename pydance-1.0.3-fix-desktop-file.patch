@@ -1,0 +1,16 @@
+Index: pydance-1.0.3/desktop.pydance
+===================================================================
+--- pydance-1.0.3/desktop.pydance
++++ pydance-1.0.3/desktop.pydance	2009-05-14 09:38:07.000000000 +0200
+@@ -1,9 +1,7 @@
+ [Desktop Entry]
+-Version=1.0
+ Type=Application
+-Encoding=UTF-8
+ Name=pydance
+-Icon=pydance.png
++Icon=pydance
+ GenericName=Dancing Game
+ Exec=pydance
+-Categories=Application;Game;ArcadeGame;Music
++Categories=Game;ArcadeGame;Music;
