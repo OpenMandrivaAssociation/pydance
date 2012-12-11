@@ -80,3 +80,116 @@ convert -size 48x48 icon.png $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 %{_gamesbindir}/%{name}
 %{_bindir}/*
 
+
+
+%changelog
+* Thu May 14 2009 Samuel Verschelde <stormi@mandriva.org> 1.0.3-7mdv2010.0
++ Revision: 375617
+- remove redundant desktop file (#49387)
+- fix desktop file
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.0.3-6mdv2009.0
++ Revision: 259403
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.0.3-5mdv2009.0
++ Revision: 247260
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Fri Jan 25 2008 Funda Wang <fundawang@mandriva.org> 1.0.3-3mdv2008.1
++ Revision: 157783
+- fix desktop entry
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Dec 20 2007 Thierry Vignaud <tvignaud@mandriva.com> 1.0.3-2mdv2008.1
++ Revision: 135456
+- auto-convert XDG menu entry
+- kill re-definition of %%buildroot on Pixel's request
+- import pydance
+
+
+* Fri Sep 30 2005 Nicolas L�cureuil <neoclust@mandriva.org> 1.0.3-2mdk
+ - Buildrequires fix 
+
+* Wed Apr 06 2005 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.3-1mdk
+- 1.0.3
+
+* Thu Aug 26 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.2-2mdk
+- rebuild for new menu
+
+* Thu Jul 08 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.2-1mdk
+- 1.0.2
+
+* Fri Apr 02 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.1-1mdk
+- 1.0.1
+
+* Tue Mar 02 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.0-1mdk
+- 1.0.0
+- use zip install
+- use provided icon
+- add kde .desktop entry
+
+* Thu Feb 12 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.9.1-1mdk
+- 0.9.1
+
+* Tue Feb 10 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.9.0-2mdk
+- add more docs as requested by Joe Wreschnig <piman@debian.org>
+
+* Wed Feb 04 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.9.0-1mdk
+- 0.9.0
+- drop buildrequires
+
+* Mon Jan 12 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.8.4-1mdk
+- 0.8.4
+
+* Mon Jan 05 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.8.3-1mdk
+- 0.8.3
+
+* Mon Nov 17 2003 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.8.2-1mdk
+- 0.8.2
+- drop P0
+- fix buildrequires (lib64..)
+
+* Sun Sep 14 2003 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.8.1-1mdk
+- 0.8.1
+- regenerate P0
+
+* Wed Jul 30 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.7.4-1mdk
+- 0.7.4
+- package has been renamed to pydance
+- don't use soundwrapper
+
+* Thu Jul 03 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.7.1-1mdk
+- 0.7.1
+
+* Fri Jun 06 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.7.0-1mdk
+- 0.7.0
+- drop stefile.txt from %%doc, no longer in source
+- fix file permissions
+
+* Tue Jun 03 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.6.5-1mdk
+- 0.6.5
+
+* Fri May 30 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.6.4-1mdk
+- 0.6.4
+
+* Tue May 20 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.6.3-1mdk
+- 0.6.3
+- dropped ddrmat and pyddr.txt from docs as they're no longer included
+  in the source
+- added docs/README.html to docs
+- removed pygame from BuildRequires
+
+* Mon Apr 28 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.6.2-1mdk
+- 0.6.2
+
+* Thu Apr 10 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 0.6.1-1mdk
+- initial release
