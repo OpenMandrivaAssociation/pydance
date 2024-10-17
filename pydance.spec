@@ -7,7 +7,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 License:	MIT
-Url:		http://icculus.org/pyddr/
+Url:		https://icculus.org/pyddr/
 Source0:	%{name}-%{version}.tar.bz2
 Source2:	%{name}-README.mandrake.bz2
 Patch0:		pydance-1.0.3-fix-desktop-file.patch
